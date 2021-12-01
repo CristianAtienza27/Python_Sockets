@@ -1,0 +1,10 @@
+1; ¿En que año el hombre piso la Luna por primera vez?;A) 1969;B) 1963;C) 1971;D) 1967;
+2; ¿Cual es el rio mas caudaloso del mundo?;A) Nilo;B) Amazonas;C) Tajo;D) Guadiana;
+3; ¿Que gran artista es conocido por haber pintado la Capilla Sixtina?;A) Van Gogh;B) Botero;C) Miguel Angel;D) Goya;
+4; ¿Quien es considerado el mejor jugador de baloncesto de todos los tiempos?;A) Lebron James;B) Pau Gasol;C) Michael Jordan;D) Iverson;
+5; ¿Qué entrenador español logro el primer (y unico) sextete al ganar los seis campeonatos posibles en una unica temporada?;A) Unay Emery;B) Mourinho;C) Guardiola;D) Marcelino;
+6; ¿Como se llama la madre de Simba en la pelIcula de Disney El Rey Leon?;A) Kenia;B) Simbad;C) Sarabi;D) Leona;
+7; ¿Qué pelicula de Christopher Nolan narra la historia de un hombre con amnesia anterograda, que no puede crear nuevos recuerdos a partir de lo que le va ocurriendo?;A) Amnesia;B) Memento;C) Recuerdos imborrables;D) Key;
+8; ¿Qué novela escribio Miguel de Cervantes y es considerada como una de los maximos exponentes de la literatura española y universal?;A) Quijote;B) El Cid Campeador;C) Obras de Cervantes;D) El olvidado;
+9; ¿Cuál es el monte más alto del mundo?;A) Montblanc;B) Annapurna;C) Veleta;D)Everest;
+10; ¿Cuál es la lengua más hablada del mundo?;A) Español;B) Ingles;C) Chino;D) Francés;
