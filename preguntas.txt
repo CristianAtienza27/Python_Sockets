@@ -8,3 +8,13 @@
 8; ¿Qué novela escribio Miguel de Cervantes y es considerada como una de los maximos exponentes de la literatura española y universal?;A) Quijote;B) El Cid Campeador;C) Obras de Cervantes;D) El olvidado;
 9; ¿Cuál es el monte más alto del mundo?;A) Montblanc;B) Annapurna;C) Veleta;D)Everest;
 10; ¿Cuál es la lengua más hablada del mundo?;A) Español;B) Ingles;C) Chino;D) Francés;
+11;¿Qué futbolista ha marcado más goles en la historia de La Liga?;A. Cristiano Ronaldo;B. Hugo Sánchez;C. Lionel Messi;D. Telmo Zarra;
+12;¿Cuál de estos equipos no ha militado siempre en primera división?;A. Athletic Club de Bilbao;B. Real Madrid;C. Valencia;D. Barcelona;
+13;¿Qué equipo de fútbol ha ganado más copas de Europa?;A. Real Madrid;B. AC Milán;C. Bayern de Múnich;D. Liverpool;
+14;¿En qué  no equipo europeo jugó Ronaldo Nazario de Lima?;A. Inter de Milán;B. PSV;C. Real Madrid;D. Ajax;
+15;¿Qué nombre recibe la liga de fútbol alemana de máxima categoría?;A. DFB-Pokal;B. Bundesliga;C. Liga de Alemania DFB-Ligapokal;D. DFL-Supercup;
+16;¿A quién se otorga el Balón de Oro?;A. Al mejor futbolista mundial del año.;B. Al mejor goleador mundial del año.;C. Al mejor futbolista retirado.;D. Al mejor director tecnico del año.;
+17;¿A qué país pertenece la Liga Calcio?;A. Italia;B. Alemania;C. España;D. Francia;
+18;¿Quién es el máximo goleador de la historia de los mundiales?;A. Diego Maradona;B. Miroslav Klose;C. Ronaldo Nazario;D. Cristiano Ronaldo;
+19;¿Cuándo ganó Lionel Messi su primer balón de oro?;A. 2009;B. 2008;C. 2010;D. 2015;
+20;¿En qué equipos ingleses jugó Éric Cantona?;A. Newcastle United y Liverpool;B. Leeds United y Manchester United;C. Nottingham Forest y Manchester City ;D. Blackburn Rovers y Chelsea;

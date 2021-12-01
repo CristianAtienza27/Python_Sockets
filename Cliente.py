@@ -58,7 +58,7 @@ def registro():
     password = input('Password: ')
 
     if comprobarEmail(email):
-        server.send('registro;' + email + ';'+ password)
+        server.send(('registro;' + email + ';'+ password).encode())
         respuesta = server.recv(1024).decode()
 
         if respuesta == 'True':
@@ -134,7 +134,7 @@ while not salir:
     # Comprueba acierto
         acierto = server.recv(1024).decode()
         print(acierto)
-        sleep(2)
+        sleep(1)
         os.system('cls')
     elif enunciado[0] == 'FT':
         print(enunciado[1])

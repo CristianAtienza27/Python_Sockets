@@ -31,8 +31,10 @@ class Trivial(Thread):
                 else:
                     self.socket.send("False".encode())
             elif datos[0] == 'registro':
-                if(registro(datos[1], datos[2])):
+                if not registro(datos[1], datos[2]):
                     self.socket.send("True".encode())
+                else:
+                    self.socket.send("False".encode())
             else:
                 self.socket.send("False".encode())
         
@@ -65,6 +67,10 @@ class Trivial(Thread):
 
         numJugadores = numJugadores - 1
 
+        cad = ""
+        jugadoresOrdenados = list()
+        clasDic = {}
+
         if numJugadores == 0:
 
             mutex.acquire()
@@ -73,17 +79,34 @@ class Trivial(Thread):
                 file = Path('./clasificacion.txt')
                 file.touch(exist_ok=True)
 
-            jugadores = sorted(jugadores.items(), key=operator.itemgetter(1))
+            jugadoresOrdenados = sorted(jugadores.items(), key=operator.itemgetter(1))
 
-            clasificacion = open("./clasificacion.txt","a")
-
-            for jug in enumerate(jugadores):
-                clasificacion.write(jug[1][0] + ';' + str(jug[1][1]) +  "\n") 
-                cad += jug[1][0] + ' ' + str(jug[1][1]) + '\n'               
+            clasificacion = open("./clasificacion.txt","r")
+            
+            for linea in clasificacion:
+                datos = linea.split(";")
+                clasDic.__setitem__(datos[0], datos[1])
 
             clasificacion.close()
+            keys = clasDic.keys()
 
-            mostrarRanking(self.email, self.aciertos)
+            for jugador in enumerate(jugadoresOrdenados):
+
+                if (jugador[1][0] in keys):
+                    valor = int(clasDic[jugador[1][0]]) + int(jugadores[jugador[1][0]])
+                    clasDic[jugador[1][0]] = valor
+                else:
+                    clasDic.__setitem__(jugador[1][0], jugadores[jugador[1][0]])
+
+                cad += str(jugador[1][0]) + ' ' + str(jugador[1][1]) + "\n"
+
+            general = open("./clasificacion.txt", "w")
+            
+            for key, value in clasDic.items():
+                jugador = str(key) + ";" + str(value)
+                general.write(str(jugador) + "\n")
+
+            general.close()               
 
             mutex.release()
 
@@ -94,7 +117,7 @@ class Trivial(Thread):
 
         sleep(tiempo)
         
-        self.socket.send(str('FP;\n>>> Fin de la partida <<<\n' + cad).encode())
+        self.socket.send(str('FP;\n>>> Fin de la partida <<<\n' + str(cad)).encode())
 
         turno.release()
 
@@ -138,14 +161,14 @@ def registro(email, password):
             else:
                 existe = False
 
-            if not existe:
-                usuarios = open("./usuarios.txt",'a')
-                usuarios.write(email + ';' + password)
-                usuarios.write("\n")
-                print('Usuario registrado con éxito')
-                existe = False
-                usuarios.close()
-                sleep(2)
+    if not existe:
+        usuarios = open("./usuarios.txt",'a')
+        usuarios.write(email + ';' + password)
+        usuarios.write("\n")
+        print('Usuario registrado con éxito')
+        existe = False
+        usuarios.close()
+        sleep(2)
     
     return existe
 
@@ -182,29 +205,8 @@ def comprobarRespuesta(numPregunta, resp):
     fichero.close()
     return False
 
-def mostrarRanking(emailJugador: str, aciertos: int):
-    clasificacion = open("./clasificacion.txt", "r")
-    jugPuntos = {}
-    pos = 0
 
-    for linea in clasificacion:
-        datos = linea.split(';')
-        jugPuntos.__setitem__(datos[0], datos[1])
-    
-    clasificacion.close()
-
-    jugPuntos = sorted(jugPuntos.items(), key=operator.itemgetter(1), reverse=True)
-
-    for jug in enumerate(jugPuntos):
-        if emailJugador == jug[1][0]:
-            jug[1][1] = int(jug[1][1] + int(aciertos))
-
-    for jug in enumerate(jugPuntos):
-        pos += 1
-        print(str(pos) + ') ' + jug[1][0] + ' ' + jug[1][1])
-
-
-turno = Semaphore(2)
+turno = Semaphore(4)
 mutex = Lock()
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind(("",9004))
