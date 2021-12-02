@@ -1,2 +1,2 @@
-lolo@mail.com;12
-cristian@mail.com;10
+lolo@mail.com;29
+cristian@mail.com;23
